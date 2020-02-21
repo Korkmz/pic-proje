@@ -1,0 +1,23 @@
+[PROJECT]
+Target=lecdbakma.hex
+Processor_Text=PIC16F877
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=lecdbakma.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\tr\Desktop\pýc2\lecdbakma]
+Type=4
+[mru-list]
+1=lecdbakma.c
+[Opened Files]
+1=lecdbakma.c
+2=
+3=
+[lecdbakma.c]
+Type=4
+[Units]
+Count=1
+1=lecdbakma (main)

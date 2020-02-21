@@ -1,0 +1,24 @@
+#include <lecdbakma.h>
+#fuses HS
+#use delay(clock=8000000)
+#use fast_io(b)
+#include <lcd.c>
+
+
+void main()
+{
+
+   set_tris_d(0x00);
+   lcd_init();
+   
+   while(1)
+   {
+   printf(lcd_putc,"\fSampiyon");
+   delay_ms(500);
+     printf(lcd_putc, "\fHatice");
+    delay_ms(500);
+    printf(lcd_putc,"\nBilgisayar");
+    delay_ms(200);
+   }
+
+}

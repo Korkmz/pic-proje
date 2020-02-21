@@ -1,0 +1,41 @@
+#include <lecdbakma.h>
+#fuses HS
+#use delay(clock=8000000)
+#use fast_io(b)
+#include <lcd.c>
+
+void main()
+{
+   set_tris_d(0x00);
+   lcd_init();
+   int sayi=1;
+   
+   while(1)
+   {
+      if(input(pin_a0)){
+       lcd_gotoxy(sayi,1);
+       printf(lcd_putc, "A");
+       sayi++;
+      // while(input(pin_a0));
+      }
+       if(input(pin_a1)){
+        lcd_gotoxy(sayi,1);
+        printf(lcd_putc, "L");
+        sayi++;
+      //   while(input(pin_a1));
+      }
+       if(input(pin_a2)){
+        lcd_gotoxy(sayi,1);
+        printf(lcd_putc, "I");
+        sayi++;
+      //   while(input(pin_a2));
+      }
+     if(input(pin_a3)){
+         sayi--;
+         lcd_gotoxy(sayi,1);
+         printf(lcd_putc, " ");  
+       //  while(input(pin_a3));
+      }
+   }
+
+}

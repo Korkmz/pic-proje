@@ -1,0 +1,55 @@
+#include <lecdbakma.h>   
+#fuses HS                  //Bu komut ile kullanýlan mikrodenetleyici ile ilgili 
+                           //konfigürasyon bitlerinin durumunu belirtir
+                           //HS : Yüksek hýzý ( 8 MHZ )
+#use delay(clock=8000000)  
+#use fast_io(b)            //Mikrodenetleyicinin b portunu kullandýðýný belirtir.
+#include <lcd.c>           //LCD ekranýn kütüphanesi
+
+void main()
+{
+   set_tris_d(0x00);
+   lcd_init();
+   int sayi=1;
+   
+   while(1)
+   {
+      if(input(pin_a0)){
+         if(sayi <=0){
+           sayi=1;
+          }
+       lcd_gotoxy(sayi,1);
+       printf(lcd_putc, "A");
+       sayi++;
+       while(input(pin_a0));
+      }
+       if(input(pin_a1)){
+          if(sayi <=0){
+            sayi=1;
+           }
+        lcd_gotoxy(sayi,1);
+        printf(lcd_putc, "L");
+        sayi++;
+         while(input(pin_a1));
+      }
+       if(input(pin_a2)){
+           if(sayi <=0){
+             sayi=1;
+            }
+        lcd_gotoxy(sayi,1);
+        printf(lcd_putc, "I");
+        sayi++;
+         while(input(pin_a2));
+      }
+     if(input(pin_a3)){
+         if(sayi <=0){
+           sayi=1;
+         }
+         sayi--;
+         lcd_gotoxy(sayi,1);
+         printf(lcd_putc, " ");  
+         while(input(pin_a3));
+      }
+   }
+
+}

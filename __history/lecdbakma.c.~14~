@@ -1,0 +1,25 @@
+#include <lecdbakma.h>
+#fuses HS
+#use delay(clock=8000000)
+#use fast_io(b)
+#include <lcd.c>
+
+char kar1;
+void main()
+{
+
+   set_tris_d(0x00);
+   lcd_init();
+   
+   while(1)
+   {
+   lcd_gotoxy(5,1);
+   printf(lcd_putc,"Sampiyon");
+   delay_ms(500);
+ 
+   kar1=lcd_getc(5,1);
+   printf(lcd_putc,"\n%c",kar1);
+   delay_ms(500);
+   }
+
+}

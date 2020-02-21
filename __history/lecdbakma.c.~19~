@@ -1,0 +1,34 @@
+#include <lecdbakma.h>
+#fuses HS
+#use delay(clock=8000000)
+#use fast_io(b)
+#include <lcd.c>
+
+unsigned int sayi=0;
+void main()
+{
+
+   set_tris_d(0x00);
+   lcd_init();
+   
+   while(1)
+   {
+      if(input(pin_a0)){
+       printf(lcd_putc, "A");
+       while(input(pin_a0));
+      }
+       if(input(pin_a1)){
+        printf(lcd_putc, "L");
+         while(input(pin_a1));
+      }
+       if(input(pin_a2)){
+        printf(lcd_putc, "I");
+         while(input(pin_a2));
+      }
+     if(input(pin_a3)){
+       lcd_komut(00x1);  
+         while(input(pin_a2));
+      }
+   }
+
+}
